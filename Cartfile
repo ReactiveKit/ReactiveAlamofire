@@ -1,0 +1,2 @@
+github "ReactiveKit/ReactiveKit" ~> 2.0
+github "Alamofire/Alamofire" ~> 3.3
