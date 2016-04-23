@@ -6,6 +6,8 @@
 //  Copyright © 2016 ReactiveKit. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 //! Project version number for ReactiveAlamofire.
 FOUNDATION_EXPORT double ReactiveAlamofireVersionNumber;
 
