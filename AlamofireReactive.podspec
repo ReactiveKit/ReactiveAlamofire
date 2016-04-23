@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = "ReactiveKitAlamofire"
+  s.name             = "AlamofireReactive"
   s.version          = "1.0.0"
   s.summary          = "Reactive extensions for Alamofire framework."
   s.homepage         = "https://github.com/ReactiveKit/ReactiveAlamofire"
