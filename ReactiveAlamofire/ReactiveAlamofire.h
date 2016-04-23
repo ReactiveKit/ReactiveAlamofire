@@ -6,8 +6,6 @@
 //  Copyright © 2016 ReactiveKit. All rights reserved.
 //
 
-#import <WatchKit/WatchKit.h>
-
 //! Project version number for ReactiveAlamofire.
 FOUNDATION_EXPORT double ReactiveAlamofireVersionNumber;
 
