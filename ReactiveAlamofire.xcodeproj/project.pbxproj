@@ -25,7 +25,7 @@
 		ECFFFA691CCBBC730044D30A /* ReactiveAlamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAlamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFFFA761CCBBC990044D30A /* ReactiveAlamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAlamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFFFA7E1CCBBD6C0044D30A /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		ECFFFA7F1CCBBD6C0044D30A /* ReactiveUIKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReactiveUIKit.podspec; sourceTree = "<group>"; };
+		ECFFFA7F1CCBBD6C0044D30A /* ReactiveAlamofire.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReactiveAlamofire.podspec; sourceTree = "<group>"; };
 		ECFFFA8C1CCBBF050044D30A /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				ECFFFA7E1CCBBD6C0044D30A /* Cartfile */,
-				ECFFFA7F1CCBBD6C0044D30A /* ReactiveUIKit.podspec */,
+				ECFFFA7F1CCBBD6C0044D30A /* ReactiveAlamofire.podspec */,
 				ECFFFA4A1CCB985D0044D30A /* ReactiveAlamofire */,
 				ECFFFA8B1CCBBF050044D30A /* Sources */,
 				ECFFFA491CCB985D0044D30A /* Products */,
