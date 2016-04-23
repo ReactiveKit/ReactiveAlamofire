@@ -35,8 +35,10 @@ extension Request {
 ### CocoaPods
 
 ```
-pod 'ReactiveAlamofire', '~> 1.0'
+pod 'ReactiveKitAlamofire', '~> 1.0'
 ```
+
+> Although framework is named ReactiveAlamofire, such name is already occupied on CocoaPods so we use alternative.
 
 ### Carthage
 
