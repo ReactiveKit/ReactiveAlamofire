@@ -9,7 +9,7 @@ extension Request {
   // General
 
   public func toOperation() -> Operation<(NSURLRequest?, NSHTTPURLResponse?, NSData?), NSError>
-  
+
   public func toOperation<S: ResponseSerializerType>(responseSerializer: S) -> Operation<S.SerializedObject, S.ErrorObject>
 
   public func toDataOperation() -> Operation<NSData, NSError>
@@ -38,7 +38,7 @@ extension Request {
 pod 'AlamofireReactive', '~> 1.0'
 ```
 
-> Although framework is named ReactiveAlamofire, such name is already occupied on CocoaPods so we use alternative.
+> Although framework is named ReactiveAlamofire, such name is already occupied on CocoaPods so we use alternative. You still import `ReactiveAlamofire` in your code.
 
 ### Carthage
 

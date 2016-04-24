@@ -1,11 +1,12 @@
 Pod::Spec.new do |s|
   s.name             = "AlamofireReactive"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "Reactive extensions for Alamofire framework."
   s.homepage         = "https://github.com/ReactiveKit/ReactiveAlamofire"
   s.license          = 'MIT'
   s.author           = { "Srdan Rasic" => "srdan.rasic@gmail.com" }
-  s.source           = { :git => "https://github.com/ReactiveKit/ReactiveAlamofire.git", :tag => "v1.0.0" }
+  s.source           = { :git => "https://github.com/ReactiveKit/ReactiveAlamofire.git", :tag => "v1.0.1" }
+  s.module_name      = 'ReactiveAlamofire'
 
   s.ios.deployment_target       = '8.0'
   s.osx.deployment_target       = '10.9'
