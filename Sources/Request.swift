@@ -113,7 +113,7 @@ extension Request {
 
   public func toStringStreamingOperation(delimiter delimiter: String, encoding: NSStringEncoding = NSUTF8StringEncoding) -> Operation<String, NSError> {
     return toStreamingOperation()
-      .tryMap { data -> MapResult<String, NSError> in
+      .tryMap { data -> ReactiveKit.Result<String, NSError> in
         if let string = String(data: data, encoding: encoding) {
           return .Success(string)
         } else {
@@ -139,7 +139,7 @@ extension Request {
       .filter { message in
         !message.isEmpty
       }
-      .tryMap { message -> MapResult<AnyObject, NSError> in
+      .tryMap { message -> ReactiveKit.Result<AnyObject, NSError> in
         do {
           guard let data = message.dataUsingEncoding(encoding) else {
             return .Failure(NSError(domain: "toJSONStreamingOperation: Could not encode string!", code: 0, userInfo: nil))
