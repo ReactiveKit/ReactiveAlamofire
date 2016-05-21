@@ -43,7 +43,7 @@ pod 'AlamofireReactive', '~> 1.0'
 ### Carthage
 
 ```
-github "ReactiveKit/ReactiveAlamofire" ~> 2.0
+github "ReactiveKit/ReactiveAlamofire" ~> 1.0
 ```
 
 ## License
