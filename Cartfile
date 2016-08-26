@@ -1,2 +1,2 @@
-github "ReactiveKit/ReactiveKit" ~> 2.1
-github "Alamofire/Alamofire" ~> 3.3
+github "ReactiveKit/ReactiveKit" ~> 3.0
+github "Alamofire/Alamofire" ~> 4.0

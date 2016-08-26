@@ -27,12 +27,12 @@ import ReactiveKit
 
 extension Request {
 
-  public func toOperation() -> Operation<(NSURLRequest?, NSHTTPURLResponse?, NSData?), NSError> {
-    return Operation { observer in
+  public func toSignal() -> Signal<(URLRequest?, HTTPURLResponse?, Data?), NSError> {
+    return Signal { observer in
 
       let request = self.response() { (request, response, data, error) in
         if let error = error {
-          observer.failure(error)
+          observer.failed(error)
         } else {
           observer.next(request, response, data)
           observer.completed()
@@ -47,16 +47,16 @@ extension Request {
     }
   }
 
-  public func toOperation<S: ResponseSerializerType>(responseSerializer: S) -> Operation<S.SerializedObject, S.ErrorObject> {
-    return Operation { observer in
+  public func toSignal<S: ResponseSerializerType>(_ responseSerializer: S) -> Signal<S.SerializedObject, S.ErrorObject> {
+    return Signal { observer in
 
       let request = self.response(responseSerializer: responseSerializer) { response in
         switch response.result {
-        case .Success(let value):
+        case .success(let value):
           observer.next(value)
           observer.completed()
-        case .Failure(let error):
-          observer.failure(error)
+        case .failure(let error):
+          observer.failed(error)
         }
       }
 
@@ -68,20 +68,20 @@ extension Request {
     }
   }
 
-  public func toDataOperation() -> Operation<NSData, NSError> {
-    return toOperation(Request.dataResponseSerializer())
+  public func toDataSignal() -> Signal<Data, NSError> {
+    return toSignal(Request.dataResponseSerializer())
   }
 
-  public func toStringOperation(encoding encoding: NSStringEncoding? = nil) -> Operation<String, NSError> {
-    return toOperation(Request.stringResponseSerializer(encoding: encoding))
+  public func toStringSignal(encoding: String.Encoding? = nil) -> Signal<String, NSError> {
+    return toSignal(Request.stringResponseSerializer(encoding: encoding))
   }
 
-  public func toJSONOperation(options options: NSJSONReadingOptions = .AllowFragments) -> Operation<AnyObject, NSError> {
-    return toOperation(Request.JSONResponseSerializer(options: options))
+  public func toJSONSignal(options: JSONSerialization.ReadingOptions = .allowFragments) -> Signal<Any, NSError> {
+    return toSignal(Request.JSONResponseSerializer(options: options))
   }
 
-  public func toPropertyListOperation(options options: NSPropertyListReadOptions = NSPropertyListReadOptions()) -> Operation<AnyObject, NSError> {
-    return toOperation(Request.propertyListResponseSerializer(options: options))
+  public func toPropertyListSignal(options: PropertyListSerialization.ReadOptions = PropertyListSerialization.ReadOptions()) -> Signal<Any, NSError> {
+    return toSignal(Request.propertyListResponseSerializer(options: options))
   }
 }
 
@@ -89,15 +89,15 @@ extension Request {
 
 extension Request {
 
-  public func toStreamingOperation() -> Operation<NSData, NSError> {
-    return Operation { observer in
+  public func toStreamingSignal() -> Signal<Data, NSError> {
+    return Signal { observer in
 
       let request = self
         .stream { data in
           observer.next(data)
         }.response() { (_, _, _, error) in
           if let error = error {
-            observer.failure(error)
+            observer.failed(error)
           } else {
             observer.completed()
           }
@@ -111,67 +111,66 @@ extension Request {
     }
   }
 
-  public func toStringStreamingOperation(delimiter delimiter: String, encoding: NSStringEncoding = NSUTF8StringEncoding) -> Operation<String, NSError> {
-    return toStreamingOperation()
+  public func toStringStreamingSignal(delimiter: String, encoding: String.Encoding = .utf8) -> Signal<String, NSError> {
+    return toStreamingSignal()
       .tryMap { data -> ReactiveKit.Result<String, NSError> in
         if let string = String(data: data, encoding: encoding) {
-          return .Success(string)
+          return .success(string)
         } else {
-          return .Failure(NSError(domain: "toStringStreamingOperation: Could not decode string!", code: 0, userInfo: nil))
+          return .failure(NSError(domain: "toStringStreamingSignal: Could not decode string!", code: 0, userInfo: nil))
         }
       }
-      .flatMap(.Latest) { string in
-        Operation<String, NSError>.sequence(string.characters.map { String($0) })
+      .flatMapLatest { string in
+        Signal<String, NSError>.sequence(string.characters.map { String($0) })
       }
       .split { character in
         character == delimiter
       }
       .map {
-        $0.joinWithSeparator("")
+        $0.joined(separator: "")
     }
   }
 
-  public func toJSONStreamingOperation(delimiter delimiter: String = "\n", encoding: NSStringEncoding = NSUTF8StringEncoding, options: NSJSONReadingOptions = .AllowFragments) -> Operation<AnyObject, NSError> {
-    return toStringStreamingOperation(delimiter: delimiter, encoding: encoding)
+  public func toJSONStreamingSignal(delimiter: String = "\n", encoding: String.Encoding = .utf8, options: JSONSerialization.ReadingOptions = .allowFragments) -> Signal<Any, NSError> {
+    return toStringStreamingSignal(delimiter: delimiter, encoding: encoding)
       .map { message in
-        message.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        message.trimmingCharacters(in: .whitespacesAndNewlines)
       }
       .filter { message in
         !message.isEmpty
       }
-      .tryMap { message -> ReactiveKit.Result<AnyObject, NSError> in
+      .tryMap { message -> ReactiveKit.Result<Any, NSError> in
         do {
-          guard let data = message.dataUsingEncoding(encoding) else {
-            return .Failure(NSError(domain: "toJSONStreamingOperation: Could not encode string!", code: 0, userInfo: nil))
+          guard let data = message.data(using: encoding) else {
+            return .failure(NSError(domain: "toJSONStreamingSignal: Could not encode string!", code: 0, userInfo: nil))
           }
-          let json = try NSJSONSerialization.JSONObjectWithData(data, options: options)
-          return .Success(json)
+          let json = try JSONSerialization.jsonObject(with: data, options: options)
+          return .success(json)
         } catch {
-          return .Failure(error as NSError)
+          return .failure(error as NSError)
         }
     }
   }
 }
 
-extension OperationType {
+extension SignalProtocol {
 
-  @warn_unused_result
-  public func split(isDelimiter: Element -> Bool) -> Operation<[Element], Error> {
-    return Operation { observer in
+  public func split(_ isDelimiter: @escaping (Element) -> Bool) -> Signal<[Element], Error> {
+    return Signal { observer in
       var buffer: [Element] = []
       return self.observe { event in
         switch event {
-        case .Next(let element):
+        case .next(let element):
           if isDelimiter(element) {
             observer.next(buffer)
             buffer.removeAll()
           } else {
             buffer.append(element)
           }
-        case .Completed:
+        case .completed:
           observer.completed()
-        case .Failure(let error):
-          observer.failure(error)
+        case .failed(let error):
+          observer.failed(error)
         }
       }
     }

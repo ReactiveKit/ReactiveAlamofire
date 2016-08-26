@@ -8,25 +8,25 @@ extension Request {
 
   // General
 
-  public func toOperation() -> Operation<(NSURLRequest?, NSHTTPURLResponse?, NSData?), NSError>
+  public func toSignal() -> Signal<(URLRequest?, HTTPURLResponse?, Data?), NSError>
 
-  public func toOperation<S: ResponseSerializerType>(responseSerializer: S) -> Operation<S.SerializedObject, S.ErrorObject>
+  public func toSignal<S: ResponseSerializerType>(_ responseSerializer: S) -> Signal<S.SerializedObject, S.ErrorObject>
 
-  public func toDataOperation() -> Operation<NSData, NSError>
+  public func toDataSignal() -> Signal<Data, NSError>
 
-  public func toStringOperation(encoding encoding: NSStringEncoding? = nil) -> Operation<String, NSError>
+  public func toStringSignal(encoding encoding: String.Encoding? = nil) -> Signal<String, NSError>
 
-  public func toJSONOperation(options options: NSJSONReadingOptions = .AllowFragments) -> Operation<AnyObject, NSError>
+  public func toJSONSignal(options options: JSONSerialization.ReadingOptions = .allowFragments) -> Signal<Any, NSError>
 
-  public func toPropertyListOperation(options options: NSPropertyListReadOptions = NSPropertyListReadOptions()) -> Operation<AnyObject, NSError>
+  public func toPropertyListSignal(options options: PropertyListSerialization.ReadOptions = PropertyListSerialization.ReadOptions()) -> Signal<Any, NSError>
 
   // Streaming
 
-  public func toStreamingOperation() -> Operation<NSData, NSError>
+  public func toStreamingSignal() -> Signal<Data, NSError>
 
-  public func toStringStreamingOperation(delimiter delimiter: String, encoding: NSStringEncoding = NSUTF8StringEncoding) -> Operation<String, NSError>
+  public func toStringStreamingSignal(elimiter: String, encoding: String.Encoding = .utf8) -> Signal<String, NSError>
 
-  public func toJSONStreamingOperation(delimiter delimiter: String = "\n", encoding: NSStringEncoding = NSUTF8StringEncoding, options: NSJSONReadingOptions = .AllowFragments) -> Operation<AnyObject, NSError>
+  public func toJSONStreamingSignal(delimiter: String = "\n", encoding: String.Encoding = .utf8, options: JSONSerialization.ReadingOptions = .allowFragments) -> Signal<Any, NSError>
 }
 ```
 
@@ -35,7 +35,7 @@ extension Request {
 ### CocoaPods
 
 ```
-pod 'AlamofireReactive', '~> 1.0'
+pod 'AlamofireReactive', '~> 2.0.0-beta1'
 ```
 
 > Although framework is named ReactiveAlamofire, such name is already occupied on CocoaPods so we use alternative. You still import `ReactiveAlamofire` in your code.
@@ -43,7 +43,7 @@ pod 'AlamofireReactive', '~> 1.0'
 ### Carthage
 
 ```
-github "ReactiveKit/ReactiveAlamofire" ~> 1.0
+github "ReactiveKit/ReactiveAlamofire" ~> 2.0
 ```
 
 ## License
