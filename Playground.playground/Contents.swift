@@ -3,18 +3,18 @@
 import Alamofire
 import ReactiveKit
 import ReactiveAlamofire
-import XCPlayground
+import PlaygroundSupport
 
-XCPlayground.XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
+PlaygroundPage.current.needsIndefiniteExecution = true
 
-let request = Alamofire.request(.GET, "https://httpbin.org/get", parameters: ["foo": "bar"])
+let request = Alamofire.request("https://httpbin.org/get", withMethod: .get, parameters: ["foo": "bar"])
 
 request.toJSONSignal().observeNext { json in
   print(json)
 }
 
 
-let streamRequest = Alamofire.request(.GET, "http://httpbin.org/stream/3")
+let streamRequest = Alamofire.request("http://httpbin.org/stream/3", withMethod: .get)
 
 streamRequest.toJSONStreamingSignal().observeNext { json in
   print("stream part: \(json)")
