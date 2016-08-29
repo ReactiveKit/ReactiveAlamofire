@@ -32,7 +32,7 @@ extension Request {
 
       let request = self.response() { (request, response, data, error) in
         if let error = error {
-          observer.failed(error)
+          observer.failed(error as NSError)
         } else {
           observer.next(request, response, data)
           observer.completed()
@@ -47,7 +47,7 @@ extension Request {
     }
   }
 
-  public func toSignal<S: ResponseSerializerType>(_ responseSerializer: S) -> Signal<S.SerializedObject, S.ErrorObject> {
+  public func toSignal<S: ResponseSerializerType>(_ responseSerializer: S) -> Signal<S.SerializedObject, NSError> {
     return Signal { observer in
 
       let request = self.response(responseSerializer: responseSerializer) { response in
@@ -56,7 +56,7 @@ extension Request {
           observer.next(value)
           observer.completed()
         case .failure(let error):
-          observer.failed(error)
+          observer.failed(error as NSError)
         }
       }
 
@@ -97,7 +97,7 @@ extension Request {
           observer.next(data)
         }.response() { (_, _, _, error) in
           if let error = error {
-            observer.failed(error)
+            observer.failed(error as NSError)
           } else {
             observer.completed()
           }
