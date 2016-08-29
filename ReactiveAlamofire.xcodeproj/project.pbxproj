@@ -7,29 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		168FF0DB1D742BEC000997A3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFFFA8C1CCBBF050044D30A /* Request.swift */; };
+		168FF0DC1D742BEE000997A3 /* ReactiveAlamofire.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFFFA4B1CCB985D0044D30A /* ReactiveAlamofire.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFFFA4C1CCB985D0044D30A /* ReactiveAlamofire.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFFFA4B1CCB985D0044D30A /* ReactiveAlamofire.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFFFA881CCBBE880044D30A /* ReactiveAlamofire.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFFFA4B1CCB985D0044D30A /* ReactiveAlamofire.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFFFA891CCBBE880044D30A /* ReactiveAlamofire.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFFFA4B1CCB985D0044D30A /* ReactiveAlamofire.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ECFFFA8A1CCBBE890044D30A /* ReactiveAlamofire.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFFFA4B1CCB985D0044D30A /* ReactiveAlamofire.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFFFA8D1CCBBF050044D30A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFFFA8C1CCBBF050044D30A /* Request.swift */; };
 		ECFFFA8E1CCBBF050044D30A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFFFA8C1CCBBF050044D30A /* Request.swift */; };
 		ECFFFA8F1CCBBF050044D30A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFFFA8C1CCBBF050044D30A /* Request.swift */; };
-		ECFFFA901CCBBF050044D30A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFFFA8C1CCBBF050044D30A /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		168FF0D31D742B99000997A3 /* ReactiveAlamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAlamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFFFA481CCB985D0044D30A /* ReactiveAlamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAlamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFFFA4B1CCB985D0044D30A /* ReactiveAlamofire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveAlamofire.h; sourceTree = "<group>"; };
 		ECFFFA4D1CCB985D0044D30A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECFFFA5B1CCBBBD10044D30A /* ReactiveAlamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAlamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFFFA691CCBBC730044D30A /* ReactiveAlamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAlamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECFFFA761CCBBC990044D30A /* ReactiveAlamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAlamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFFFA7E1CCBBD6C0044D30A /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		ECFFFA8C1CCBBF050044D30A /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		ECFFFA911CCBC55E0044D30A /* AlamofireReactive.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AlamofireReactive.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		168FF0CF1D742B99000997A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECFFFA441CCB985D0044D30A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,13 +52,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ECFFFA651CCBBC730044D30A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ECFFFA721CCBBC990044D30A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,7 +78,7 @@
 				ECFFFA481CCB985D0044D30A /* ReactiveAlamofire.framework */,
 				ECFFFA5B1CCBBBD10044D30A /* ReactiveAlamofire.framework */,
 				ECFFFA691CCBBC730044D30A /* ReactiveAlamofire.framework */,
-				ECFFFA761CCBBC990044D30A /* ReactiveAlamofire.framework */,
+				168FF0D31D742B99000997A3 /* ReactiveAlamofire.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +103,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		168FF0D01D742B99000997A3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				168FF0DC1D742BEE000997A3 /* ReactiveAlamofire.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECFFFA451CCB985D0044D30A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,17 +135,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ECFFFA731CCBBC990044D30A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ECFFFA8A1CCBBE890044D30A /* ReactiveAlamofire.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		168FF0D21D742B99000997A3 /* ReactiveAlamofire-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 168FF0D81D742B99000997A3 /* Build configuration list for PBXNativeTarget "ReactiveAlamofire-macOS" */;
+			buildPhases = (
+				168FF0CE1D742B99000997A3 /* Sources */,
+				168FF0CF1D742B99000997A3 /* Frameworks */,
+				168FF0D01D742B99000997A3 /* Headers */,
+				168FF0D11D742B99000997A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ReactiveAlamofire-macOS";
+			productName = "ReactiveAlamofire-macOS";
+			productReference = 168FF0D31D742B99000997A3 /* ReactiveAlamofire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		ECFFFA471CCB985D0044D30A /* ReactiveAlamofire-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECFFFA501CCB985D0044D30A /* Build configuration list for PBXNativeTarget "ReactiveAlamofire-iOS" */;
@@ -192,24 +210,6 @@
 			productReference = ECFFFA691CCBBC730044D30A /* ReactiveAlamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		ECFFFA751CCBBC990044D30A /* ReactiveAlamofire-macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ECFFFA7B1CCBBC990044D30A /* Build configuration list for PBXNativeTarget "ReactiveAlamofire-macOS" */;
-			buildPhases = (
-				ECFFFA711CCBBC990044D30A /* Sources */,
-				ECFFFA721CCBBC990044D30A /* Frameworks */,
-				ECFFFA731CCBBC990044D30A /* Headers */,
-				ECFFFA741CCBBC990044D30A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ReactiveAlamofire-macOS";
-			productName = ReactiveAlamofire;
-			productReference = ECFFFA761CCBBC990044D30A /* ReactiveAlamofire.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,6 +219,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = ReactiveKit;
 				TargetAttributes = {
+					168FF0D21D742B99000997A3 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
 					ECFFFA471CCB985D0044D30A = {
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0800;
@@ -227,9 +231,6 @@
 						CreatedOnToolsVersion = 7.3;
 					};
 					ECFFFA681CCBBC730044D30A = {
-						CreatedOnToolsVersion = 7.3;
-					};
-					ECFFFA751CCBBC990044D30A = {
 						CreatedOnToolsVersion = 7.3;
 					};
 				};
@@ -249,12 +250,19 @@
 				ECFFFA471CCB985D0044D30A /* ReactiveAlamofire-iOS */,
 				ECFFFA5A1CCBBBD10044D30A /* ReactiveAlamofire-tvOS */,
 				ECFFFA681CCBBC730044D30A /* ReactiveAlamofire-watchOS */,
-				ECFFFA751CCBBC990044D30A /* ReactiveAlamofire-macOS */,
+				168FF0D21D742B99000997A3 /* ReactiveAlamofire-macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		168FF0D11D742B99000997A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECFFFA461CCB985D0044D30A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,16 +284,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ECFFFA741CCBBC990044D30A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		168FF0CE1D742B99000997A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				168FF0DB1D742BEC000997A3 /* Request.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECFFFA431CCB985D0044D30A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,17 +319,61 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ECFFFA711CCBBC990044D30A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ECFFFA901CCBBF050044D30A /* Request.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		168FF0D91D742B99000997A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ReactiveAlamofire/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = ReactiveKit.ReactiveAlamofire;
+				PRODUCT_NAME = ReactiveAlamofire;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		168FF0DA1D742B99000997A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ReactiveAlamofire/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = ReactiveKit.ReactiveAlamofire;
+				PRODUCT_NAME = ReactiveAlamofire;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		ECFFFA4E1CCB985D0044D30A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -358,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -400,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -539,53 +592,17 @@
 			};
 			name = Release;
 		};
-		ECFFFA7C1CCBBC990044D30A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
-				INFOPLIST_FILE = ReactiveAlamofire/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ReactiveKit.ReactiveAlamofire;
-				PRODUCT_NAME = ReactiveAlamofire;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		ECFFFA7D1CCBBC990044D30A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
-				INFOPLIST_FILE = ReactiveAlamofire/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ReactiveKit.ReactiveAlamofire;
-				PRODUCT_NAME = ReactiveAlamofire;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		168FF0D81D742B99000997A3 /* Build configuration list for PBXNativeTarget "ReactiveAlamofire-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				168FF0D91D742B99000997A3 /* Debug */,
+				168FF0DA1D742B99000997A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		ECFFFA421CCB985D0044D30A /* Build configuration list for PBXProject "ReactiveAlamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -618,15 +635,6 @@
 			buildConfigurations = (
 				ECFFFA6F1CCBBC740044D30A /* Debug */,
 				ECFFFA701CCBBC740044D30A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ECFFFA7B1CCBBC990044D30A /* Build configuration list for PBXNativeTarget "ReactiveAlamofire-macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ECFFFA7C1CCBBC990044D30A /* Debug */,
-				ECFFFA7D1CCBBC990044D30A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
