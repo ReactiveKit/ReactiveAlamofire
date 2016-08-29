@@ -192,9 +192,9 @@
 			productReference = ECFFFA691CCBBC730044D30A /* ReactiveAlamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		ECFFFA751CCBBC990044D30A /* ReactiveAlamofire-OSX */ = {
+		ECFFFA751CCBBC990044D30A /* ReactiveAlamofire-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ECFFFA7B1CCBBC990044D30A /* Build configuration list for PBXNativeTarget "ReactiveAlamofire-OSX" */;
+			buildConfigurationList = ECFFFA7B1CCBBC990044D30A /* Build configuration list for PBXNativeTarget "ReactiveAlamofire-macOS" */;
 			buildPhases = (
 				ECFFFA711CCBBC990044D30A /* Sources */,
 				ECFFFA721CCBBC990044D30A /* Frameworks */,
@@ -205,7 +205,7 @@
 			);
 			dependencies = (
 			);
-			name = "ReactiveAlamofire-OSX";
+			name = "ReactiveAlamofire-macOS";
 			productName = ReactiveAlamofire;
 			productReference = ECFFFA761CCBBC990044D30A /* ReactiveAlamofire.framework */;
 			productType = "com.apple.product-type.framework";
@@ -249,7 +249,7 @@
 				ECFFFA471CCB985D0044D30A /* ReactiveAlamofire-iOS */,
 				ECFFFA5A1CCBBBD10044D30A /* ReactiveAlamofire-tvOS */,
 				ECFFFA681CCBBC730044D30A /* ReactiveAlamofire-watchOS */,
-				ECFFFA751CCBBC990044D30A /* ReactiveAlamofire-OSX */,
+				ECFFFA751CCBBC990044D30A /* ReactiveAlamofire-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -339,7 +339,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -388,7 +387,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -416,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -437,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -456,6 +456,7 @@
 		ECFFFA611CCBBBD10044D30A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -476,6 +477,7 @@
 		ECFFFA621CCBBBD10044D30A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -497,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -518,6 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -539,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -560,6 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -616,7 +622,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ECFFFA7B1CCBBC990044D30A /* Build configuration list for PBXNativeTarget "ReactiveAlamofire-OSX" */ = {
+		ECFFFA7B1CCBBC990044D30A /* Build configuration list for PBXNativeTarget "ReactiveAlamofire-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ECFFFA7C1CCBBC990044D30A /* Debug */,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ECFFFA751CCBBC990044D30A"
                BuildableName = "ReactiveAlamofire.framework"
-               BlueprintName = "ReactiveAlamofire-OSX"
+               BlueprintName = "ReactiveAlamofire-macOS"
                ReferencedContainer = "container:ReactiveAlamofire.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,7 +47,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ECFFFA751CCBBC990044D30A"
             BuildableName = "ReactiveAlamofire.framework"
-            BlueprintName = "ReactiveAlamofire-OSX"
+            BlueprintName = "ReactiveAlamofire-macOS"
             ReferencedContainer = "container:ReactiveAlamofire.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,7 +65,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ECFFFA751CCBBC990044D30A"
             BuildableName = "ReactiveAlamofire.framework"
-            BlueprintName = "ReactiveAlamofire-OSX"
+            BlueprintName = "ReactiveAlamofire-macOS"
             ReferencedContainer = "container:ReactiveAlamofire.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
