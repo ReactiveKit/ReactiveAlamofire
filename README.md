@@ -35,7 +35,7 @@ extension Request {
 ### CocoaPods
 
 ```
-pod 'AlamofireReactive', '~> 2.0.0-beta1'
+pod 'AlamofireReactive', '~> 2.0'
 ```
 
 > Although framework is named ReactiveAlamofire, such name is already occupied on CocoaPods so we use alternative. You still import `ReactiveAlamofire` in your code.
