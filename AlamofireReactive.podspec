@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name             = "AlamofireReactive"
-  s.version          = "2.0.0-beta1"
+  s.version          = "2.0.0"
   s.summary          = "Reactive extensions for Alamofire framework."
   s.homepage         = "https://github.com/ReactiveKit/ReactiveAlamofire"
   s.license          = 'MIT'
   s.author           = { "Srdan Rasic" => "srdan.rasic@gmail.com" }
-  s.source           = { :git => "https://github.com/ReactiveKit/ReactiveAlamofire.git", :tag => "v2.0.0-beta1" }
+  s.source           = { :git => "https://github.com/ReactiveKit/ReactiveAlamofire.git", :tag => "v2.0.0" }
   s.module_name      = 'ReactiveAlamofire'
 
   s.ios.deployment_target       = '9.0'
@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.source_files      = 'Sources/*.swift', 'ReactiveAlamofire/*.h'
   s.requires_arc      = true
 
-  s.dependency 'ReactiveKit', '~> 3.0.0-beta1'
-  s.dependency 'Alamofire', '4.0.0-beta.1'
+  s.dependency 'ReactiveKit', '~> 3.1'
+  s.dependency 'Alamofire', '4.2'
 end

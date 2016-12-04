@@ -25,16 +25,16 @@
 import Alamofire
 import ReactiveKit
 
-extension Request {
+extension DataRequest {
 
   public func toSignal() -> Signal<(URLRequest?, HTTPURLResponse?, Data?), NSError> {
     return Signal { observer in
 
-      let request = self.response() { (request, response, data, error) in
-        if let error = error {
+      let request = self .response { response in
+        if let error = response.error {
           observer.failed(error as NSError)
         } else {
-          observer.next(request, response, data)
+          observer.next(response.request, response.response, response.data)
           observer.completed()
         }
       }
@@ -47,7 +47,7 @@ extension Request {
     }
   }
 
-  public func toSignal<S: ResponseSerializerType>(_ responseSerializer: S) -> Signal<S.SerializedObject, NSError> {
+  public func toSignal<S: DataResponseSerializerProtocol>(_ responseSerializer: S) -> Signal<S.SerializedObject, NSError> {
     return Signal { observer in
 
       let request = self.response(responseSerializer: responseSerializer) { response in
@@ -69,25 +69,25 @@ extension Request {
   }
 
   public func toDataSignal() -> Signal<Data, NSError> {
-    return toSignal(Request.dataResponseSerializer())
+    return toSignal(DataRequest.dataResponseSerializer())
   }
 
   public func toStringSignal(encoding: String.Encoding? = nil) -> Signal<String, NSError> {
-    return toSignal(Request.stringResponseSerializer(encoding: encoding))
+    return toSignal(DataRequest.stringResponseSerializer(encoding: encoding))
   }
 
   public func toJSONSignal(options: JSONSerialization.ReadingOptions = .allowFragments) -> Signal<Any, NSError> {
-    return toSignal(Request.JSONResponseSerializer(options: options))
+    return toSignal(DataRequest.jsonResponseSerializer(options: options))
   }
 
   public func toPropertyListSignal(options: PropertyListSerialization.ReadOptions = PropertyListSerialization.ReadOptions()) -> Signal<Any, NSError> {
-    return toSignal(Request.propertyListResponseSerializer(options: options))
+    return toSignal(DataRequest.propertyListResponseSerializer(options: options))
   }
 }
 
 /// Streaming API
 
-extension Request {
+extension DataRequest {
 
   public func toStreamingSignal() -> Signal<Data, NSError> {
     return Signal { observer in
@@ -95,8 +95,8 @@ extension Request {
       let request = self
         .stream { data in
           observer.next(data)
-        }.response() { (_, _, _, error) in
-          if let error = error {
+        }.response { response in
+          if let error = response.error {
             observer.failed(error as NSError)
           } else {
             observer.completed()
@@ -111,46 +111,46 @@ extension Request {
     }
   }
 
-  public func toStringStreamingSignal(delimiter: String, encoding: String.Encoding = .utf8) -> Signal<String, NSError> {
-    return toStreamingSignal()
-      .tryMap { data -> ReactiveKit.Result<String, NSError> in
-        if let string = String(data: data, encoding: encoding) {
-          return .success(string)
-        } else {
-          return .failure(NSError(domain: "toStringStreamingSignal: Could not decode string!", code: 0, userInfo: nil))
-        }
-      }
-      .flatMapLatest { string in
-        Signal<String, NSError>.sequence(string.characters.map { String($0) })
-      }
-      .split { character in
-        character == delimiter
-      }
-      .map {
-        $0.joined(separator: "")
-    }
-  }
-
-  public func toJSONStreamingSignal(delimiter: String = "\n", encoding: String.Encoding = .utf8, options: JSONSerialization.ReadingOptions = .allowFragments) -> Signal<Any, NSError> {
-    return toStringStreamingSignal(delimiter: delimiter, encoding: encoding)
-      .map { message in
-        message.trimmingCharacters(in: .whitespacesAndNewlines)
-      }
-      .filter { message in
-        !message.isEmpty
-      }
-      .tryMap { message -> ReactiveKit.Result<Any, NSError> in
-        do {
-          guard let data = message.data(using: encoding) else {
-            return .failure(NSError(domain: "toJSONStreamingSignal: Could not encode string!", code: 0, userInfo: nil))
-          }
-          let json = try JSONSerialization.jsonObject(with: data, options: options)
-          return .success(json)
-        } catch {
-          return .failure(error as NSError)
-        }
-    }
-  }
+//  public func toStringStreamingSignal(delimiter: String, encoding: String.Encoding = .utf8) -> Signal<String, NSError> {
+//    return toSignal()
+//      .tryMap { data -> ReactiveKit.Result<String, NSError> in
+//        if let string = String(data: data, encoding: encoding) {
+//          return .success(string)
+//        } else {
+//          return .failure(NSError(domain: "toStringStreamingSignal: Could not decode string!", code: 0, userInfo: nil))
+//        }
+//      }
+//      .flatMapLatest { string in
+//        Signal<String, NSError>.sequence(string.characters.map { String($0) })
+//      }
+//      .split { character in
+//        character == delimiter
+//      }
+//      .map {
+//        $0.joined(separator: "")
+//    }
+//  }
+//
+//  public func toJSONStreamingSignal(delimiter: String = "\n", encoding: String.Encoding = .utf8, options: JSONSerialization.ReadingOptions = .allowFragments) -> Signal<Any, NSError> {
+//    return toStringStreamingSignal(delimiter: delimiter, encoding: encoding)
+//      .map { message in
+//        message.trimmingCharacters(in: .whitespacesAndNewlines)
+//      }
+//      .filter { message in
+//        !message.isEmpty
+//      }
+//      .tryMap { message -> ReactiveKit.Result<Any, NSError> in
+//        do {
+//          guard let data = message.data(using: encoding) else {
+//            return .failure(NSError(domain: "toJSONStreamingSignal: Could not encode string!", code: 0, userInfo: nil))
+//          }
+//          let json = try JSONSerialization.jsonObject(with: data, options: options)
+//          return .success(json)
+//        } catch {
+//          return .failure(error as NSError)
+//        }
+//    }
+//  }
 }
 
 extension SignalProtocol {

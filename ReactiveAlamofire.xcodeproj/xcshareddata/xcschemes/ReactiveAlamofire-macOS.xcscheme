@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "168FF0D21D742B99000997A3"
-               BuildableName = "ReactiveAlamofire-macOS.framework"
+               BuildableName = "ReactiveAlamofire.framework"
                BlueprintName = "ReactiveAlamofire-macOS"
                ReferencedContainer = "container:ReactiveAlamofire.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "168FF0D21D742B99000997A3"
-            BuildableName = "ReactiveAlamofire-macOS.framework"
+            BuildableName = "ReactiveAlamofire.framework"
             BlueprintName = "ReactiveAlamofire-macOS"
             ReferencedContainer = "container:ReactiveAlamofire.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "168FF0D21D742B99000997A3"
-            BuildableName = "ReactiveAlamofire-macOS.framework"
+            BuildableName = "ReactiveAlamofire.framework"
             BlueprintName = "ReactiveAlamofire-macOS"
             ReferencedContainer = "container:ReactiveAlamofire.xcodeproj">
          </BuildableReference>
