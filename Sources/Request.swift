@@ -22,6 +22,7 @@
 //  THE SOFTWARE.
 //
 
+import Cocoa
 import Alamofire
 import ReactiveKit
 
