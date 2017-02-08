@@ -22,6 +22,10 @@
 //  THE SOFTWARE.
 //
 
+#if os(OSX)
+import Cocoa
+#endif
+
 import Alamofire
 import ReactiveKit
 
